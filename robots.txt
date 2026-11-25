@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dalbit-drab.vercel.app/sitemap.xml
