@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="description" content="강릉을 담다, 강릉을 닮다 — 감성숙소 HOTEL 달빛강릉. 강릉역 도보 10분, 옥상 초승달 포토존이 있는 감성 호텔." />
+    <link rel="icon" href="data:," />
+    <title>HOTEL 달빛강릉 — 강릉을 담다, 강릉을 닮다</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+    <style>
+      :root {
+        --bg: #f6f1e7;
+        --bg-soft: #efe7d8;
+        --surface: #fffdf8;
+        --ink: #1c2a44;
+        --ink-soft: #4c5a72;
+        --line: #ddd2bf;
+        --navy: #101c31;
+        --navy-2: #1a2c49;
+        --moon: #c99b3f;
+        --moon-soft: #e8cf9a;
+        --kakao: #fee500;
+        --header-bg: rgba(246, 241, 231, 0.88);
+        --shadow: 0 18px 40px rgba(16, 28, 49, 0.14);
+        --radius: 18px;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0c1524;
+          --bg-soft: #111e33;
+          --surface: #152238;
+          --ink: #ece4d2;
+          --ink-soft: #a9b4c6;
+          --line: #2a3a56;
+          --header-bg: rgba(12, 21, 36, 0.88);
+          --shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+        }
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Pretendard Variable", Pretendard, "Noto Sans KR", -apple-system, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; }
+      .serif { font-family: "Noto Serif KR", serif; }
+      .wrap { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+      section { padding: 84px 0; }
+      .sec-head { max-width: 640px; margin-bottom: 40px; }
+      .sec-head .en {
+        font-size: 12px; letter-spacing: 0.32em; color: var(--moon);
+        font-weight: 700; text-transform: uppercase; margin: 0 0 10px;
+      }
+      .sec-head h2 { font-family: "Noto Serif KR", serif; font-size: clamp(26px, 4.5vw, 36px); font-weight: 700; margin: 0 0 12px; line-height: 1.3; }
+      .sec-head p { color: var(--ink-soft); margin: 0; }
+
+      /* ---------- header ---------- */
+      header {
+        position: fixed; inset: 0 0 auto 0; z-index: 60;
+        background: var(--header-bg);
+        backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .header-in { display: flex; align-items: center; gap: 20px; height: 60px; }
+      .brand { text-decoration: none; display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
+      .brand .moon-mark { color: var(--moon); font-size: 19px; line-height: 1; transform: translateY(2px); }
+      .brand strong { font-family: "Noto Serif KR", serif; font-size: 17px; letter-spacing: 0.02em; }
+      .brand span { font-size: 10px; letter-spacing: 0.28em; color: var(--ink-soft); font-weight: 600; }
+      nav.main { margin-left: auto; display: flex; gap: 4px; }
+      nav.main a {
+        text-decoration: none; font-size: 14.5px; font-weight: 600; color: var(--ink-soft);
+        padding: 10px 12px; border-radius: 10px; min-height: 44px; display: inline-flex; align-items: center;
+      }
+      nav.main a:hover { color: var(--ink); }
+      .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 48px; padding: 12px 22px; border-radius: 999px;
+        font-weight: 700; font-size: 15px; text-decoration: none; border: 1px solid transparent;
+        cursor: pointer; transition: transform 0.15s ease, background 0.15s ease;
+      }
+      .btn:active { transform: scale(0.98); }
+      .btn-moon { background: var(--moon); color: #fff8ea; }
+      .btn-moon:hover { background: #b8892f; }
+      .btn-navy { background: var(--navy); color: #f3ecd9; }
+      .btn-ghost { background: transparent; border-color: rgba(255,255,255,0.55); color: #fff; }
+      .btn-outline { background: transparent; border-color: var(--line); color: var(--ink); }
+      .header-cta { margin-left: 8px; min-height: 42px; padding: 8px 18px; font-size: 14px; }
+      @media (max-width: 760px) {
+        nav.main { display: none; }
+        .header-cta { margin-left: auto; }
+        .brand span { display: none; }
+      }
+
+      /* ---------- hero ---------- */
+      .hero {
+        position: relative; min-height: 100svh; display: flex; align-items: flex-end;
+        color: #fff; overflow: hidden; background: var(--navy);
+      }
+      .hero img.bg {
+        position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+      }
+      .hero::after {
+        content: ""; position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(10, 18, 33, 0.42) 0%, rgba(10, 18, 33, 0.08) 38%, rgba(10, 18, 33, 0.82) 88%);
+      }
+      .hero-in { position: relative; z-index: 2; width: 100%; padding: 130px 0 54px; text-align: center; }
+      .hero .en { font-size: 12px; letter-spacing: 0.42em; color: var(--moon-soft); font-weight: 700; margin: 0 0 18px; }
+      .hero h1 {
+        font-family: "Noto Serif KR", serif; font-weight: 700;
+        font-size: clamp(34px, 7.2vw, 58px); line-height: 1.28; margin: 0 0 14px;
+        text-shadow: 0 4px 30px rgba(0,0,0,0.45);
+      }
+      .hero .brand-line { font-family: "Noto Serif KR", serif; font-size: clamp(19px, 3.6vw, 26px); color: var(--moon-soft); margin: 0 0 16px; letter-spacing: 0.06em; }
+      .hero .sub { color: rgba(255,255,255,0.85); margin: 0 auto 30px; max-width: 480px; font-size: 15.5px; }
+      .hero-ctas { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+      .hero-facts {
+        display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin-top: 34px;
+      }
+      .hero-facts span {
+        font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.92);
+        border: 1px solid rgba(255,255,255,0.35); border-radius: 999px; padding: 7px 14px;
+        background: rgba(10, 18, 33, 0.35); backdrop-filter: blur(4px);
+      }
+
+      /* ---------- about ---------- */
+      .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: center; }
+      .about-grid figure { margin: 0; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+      .about-grid figure img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
+      .about-copy h2 { font-family: "Noto Serif KR", serif; font-size: clamp(25px, 4vw, 33px); line-height: 1.4; margin: 0 0 16px; }
+      .about-copy p { color: var(--ink-soft); margin: 0 0 14px; }
+      .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 26px; }
+      .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px 12px; text-align: center; }
+      .stat strong { display: block; font-family: "Noto Serif KR", serif; font-size: 21px; color: var(--ink); }
+      .stat span { font-size: 12.5px; color: var(--ink-soft); }
+      @media (max-width: 760px) { .about-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+      /* ---------- rooms ---------- */
+      #rooms { background: var(--bg-soft); }
+      .room-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+      @media (max-width: 960px) { .room-grid { grid-template-columns: repeat(2, 1fr); } }
+      @media (max-width: 600px) { .room-grid { grid-template-columns: 1fr; } }
+      .room-card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+        overflow: hidden; display: flex; flex-direction: column;
+      }
+      .room-card .ph { position: relative; }
+      .room-card .ph img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+      .room-card .count {
+        position: absolute; top: 12px; left: 12px; background: rgba(16, 28, 49, 0.78); color: #f3ecd9;
+        font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 999px; backdrop-filter: blur(3px);
+      }
+      .room-card .body { padding: 20px 20px 22px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+      .room-card h3 { font-family: "Noto Serif KR", serif; font-size: 20px; margin: 0; }
+      .room-card h3 .bath { color: var(--moon); font-size: 15px; }
+      .room-card .tag { color: var(--ink-soft); font-size: 14px; margin: 0; }
+      .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+      .chips span {
+        font-size: 12.5px; font-weight: 600; color: var(--ink-soft);
+        background: var(--bg-soft); border: 1px solid var(--line); padding: 5px 10px; border-radius: 999px;
+      }
+      .room-card .more {
+        margin-top: auto; align-self: flex-start; background: none; border: none; cursor: pointer;
+        color: var(--moon); font-weight: 700; font-size: 14.5px; padding: 10px 2px; min-height: 44px;
+        font-family: inherit;
+      }
+      .rooms-note { margin-top: 26px; color: var(--ink-soft); font-size: 14px; text-align: center; }
+
+      /* ---------- spaces ---------- */
+      .feature { display: grid; grid-template-columns: 1.25fr 1fr; gap: 44px; align-items: center; margin-bottom: 76px; }
+      .feature:last-child { margin-bottom: 0; }
+      .feature.flip .f-photos { order: 2; }
+      .f-main { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+      .f-main img { width: 100%; aspect-ratio: 16 / 10.5; object-fit: cover; }
+      .f-sub { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 12px; }
+      .f-sub img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 12px; }
+      .feature h3 { font-family: "Noto Serif KR", serif; font-size: clamp(23px, 3.6vw, 30px); margin: 0 0 14px; line-height: 1.35; }
+      .feature .en { font-size: 11.5px; letter-spacing: 0.3em; color: var(--moon); font-weight: 700; margin: 0 0 10px; text-transform: uppercase; }
+      .feature p.desc { color: var(--ink-soft); margin: 0 0 16px; }
+      .feature ul { margin: 0; padding: 0; list-style: none; }
+      .feature ul li { padding: 7px 0 7px 22px; position: relative; color: var(--ink-soft); font-size: 15px; }
+      .feature ul li::before { content: "☾"; position: absolute; left: 0; color: var(--moon); font-size: 13px; top: 9px; }
+      @media (max-width: 820px) {
+        .feature { grid-template-columns: 1fr; gap: 24px; margin-bottom: 56px; }
+        .feature.flip .f-photos { order: 0; }
+      }
+
+      /* ---------- facilities ---------- */
+      #facilities { background: var(--bg-soft); }
+      .fac-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+      @media (max-width: 900px) { .fac-grid { grid-template-columns: repeat(2, 1fr); } }
+      .fac {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 18px;
+      }
+      .fac .ic { font-size: 22px; margin-bottom: 8px; }
+      .fac strong { display: block; font-size: 15.5px; margin-bottom: 4px; }
+      .fac p { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+      .fac strong.key {
+        font-size: 17.5px; font-weight: 800; color: var(--ink);
+        box-shadow: inset 0 -0.45em 0 var(--moon-soft);
+      }
+      .hero-facts span.hl { border-color: var(--moon); background: rgba(201, 155, 63, 0.32); color: #ffe9b8; }
+      .fac-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+      .fac-photos figure { margin: 0; border-radius: 14px; overflow: hidden; position: relative; }
+      .fac-photos img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+      .fac-photos figcaption {
+        position: absolute; left: 12px; bottom: 12px; background: rgba(16,28,49,0.75); color: #f3ecd9;
+        font-size: 12.5px; font-weight: 600; padding: 5px 11px; border-radius: 999px;
+      }
+      @media (max-width: 600px) { .fac-photos { grid-template-columns: 1fr; } }
+
+      /* ---------- location ---------- */
+      .loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; align-items: start; }
+      @media (max-width: 760px) { .loc-grid { grid-template-columns: 1fr; gap: 26px; } }
+      .addr { font-family: "Noto Serif KR", serif; font-size: 21px; margin: 0 0 8px; }
+      .loc-grid .desc { color: var(--ink-soft); margin: 0 0 20px; }
+      .near { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+      .near li {
+        display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
+        padding: 13px 2px; border-bottom: 1px solid var(--line); font-size: 15px;
+      }
+      .near li b { font-weight: 700; white-space: nowrap; color: var(--moon); font-size: 14px; }
+
+      /* ---------- booking steps ---------- */
+      #booking { background: var(--navy); color: #ece4d2; }
+      #booking .sec-head h2 { color: #fff; }
+      #booking .sec-head p { color: #a9b4c6; }
+      .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+      .step { background: var(--navy-2); border: 1px solid #2c4062; border-radius: 16px; padding: 24px 22px; }
+      .step .no { font-family: "Noto Serif KR", serif; color: var(--moon-soft); font-size: 15px; letter-spacing: 0.2em; margin: 0 0 10px; }
+      .step h3 { margin: 0 0 8px; font-size: 17.5px; }
+      .step p { margin: 0; color: #b9c4d6; font-size: 14.5px; }
+      .ch-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 2px; }
+      .ch-btn {
+        display: inline-flex; align-items: center; justify-content: center; min-height: 44px;
+        padding: 10px 8px; border-radius: 10px; border: 1px solid #3a5480;
+        background: rgba(255,255,255,0.04); color: #dbe4f2; font-size: 14.5px; font-weight: 700;
+        text-align: center; text-decoration: none;
+      }
+      a.ch-btn:hover { border-color: var(--moon); color: #ffe9b8; }
+      .booking-notes { margin-top: 22px; color: #93a5bf; font-size: 13.5px; line-height: 1.8; }
+      #booking .btn { margin-top: 26px; }
+
+      /* ---------- contact ---------- */
+      .contact-card {
+        background: var(--surface); border: 1px solid var(--line); border-radius: 22px;
+        padding: 44px 28px; text-align: center; max-width: 520px; margin: 0 auto; box-shadow: var(--shadow);
+      }
+      .contact-card h2 { font-family: "Noto Serif KR", serif; font-size: 25px; margin: 0 0 8px; }
+      .contact-card .desc { color: var(--ink-soft); margin: 0 0 24px; font-size: 14.5px; }
+      .qr-box {
+        width: 216px; height: 216px; margin: 0 auto; background: #fff; border-radius: 16px;
+        padding: 12px; border: 1px solid var(--line);
+      }
+      .qr-box img { width: 100%; height: 100%; }
+      .qr-cap { margin: 16px 0 0; font-size: 13px; color: var(--ink-soft); }
+      .insta { margin-top: 26px; font-size: 14px; color: var(--ink-soft); }
+      .insta b { color: var(--ink); }
+
+      /* ---------- footer ---------- */
+      footer { border-top: 1px solid var(--line); padding: 40px 0 110px; }
+      @media (min-width: 761px) { footer { padding-bottom: 44px; } }
+      .foot-in { display: flex; flex-wrap: wrap; gap: 10px 28px; align-items: baseline; justify-content: space-between; }
+      footer .fbrand { font-family: "Noto Serif KR", serif; font-size: 17px; }
+      footer p { margin: 4px 0; color: var(--ink-soft); font-size: 13.5px; }
+      footer .copy { width: 100%; margin-top: 14px; font-size: 12.5px; color: var(--ink-soft); }
+
+      /* ---------- mobile fixed bar ---------- */
+      .mobile-bar {
+        display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 70;
+        background: var(--header-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border-top: 1px solid var(--line); padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+        gap: 10px;
+      }
+      .mobile-bar .btn { flex: 1; min-height: 52px; }
+      .mobile-bar .btn-kakao { background: var(--kakao); color: #3a1d1d; flex: 0 0 42%; }
+      @media (max-width: 760px) { .mobile-bar { display: flex; } }
+
+      /* ---------- card photo strip ---------- */
+      .strip { display: flex; gap: 6px; margin-top: 4px; }
+      .strip button {
+        flex: 1 1 0; min-width: 0; padding: 0; border: none; background: none; cursor: pointer;
+        border-radius: 9px; overflow: hidden; height: 56px;
+      }
+      .strip button img { width: 100%; height: 100%; object-fit: cover; }
+      .strip .strip-more {
+        display: flex; align-items: center; justify-content: center; height: 100%;
+        background: var(--navy); color: #f3ecd9; font-size: 12.5px; font-weight: 700; padding: 0 4px; text-align: center;
+      }
+
+      /* ---------- space galleries ---------- */
+      .gal-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 26px; }
+      @media (max-width: 760px) { .gal-grid { grid-template-columns: repeat(3, 1fr); } }
+      .gal-grid button { padding: 0; border: none; background: none; cursor: pointer; border-radius: 12px; overflow: hidden; }
+      .gal-grid button img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+      .gal-grid .gal-vbtn { position: relative; display: block; }
+      .gal-grid .gal-vbtn img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
+      .gal-vbtn .play-badge { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+      .gal-vbtn .play-badge i {
+        font-style: normal; width: 48px; height: 48px; border-radius: 50%;
+        background: rgba(16, 28, 49, 0.74); border: 1.5px solid rgba(255, 255, 255, 0.7);
+        color: #ffe9b8; font-size: 17px; display: flex; align-items: center; justify-content: center; padding-left: 4px;
+      }
+      .gal-vbtn .vlabel {
+        position: absolute; left: 8px; bottom: 8px; pointer-events: none;
+        background: rgba(16, 28, 49, 0.82); color: #f3ecd9;
+        font-size: 11.5px; font-weight: 700; padding: 4px 10px; border-radius: 999px;
+      }
+      .gal-cap { margin: 14px 0 0; font-size: 13.5px; color: var(--ink-soft); text-align: center; }
+
+      /* ---------- dispersed moon photos ---------- */
+      .moon-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 26px; }
+      .moon-row button { padding: 0; border: none; background: none; cursor: pointer; border-radius: 14px; overflow: hidden; display: block; }
+      .moon-row button img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+      .moon-one { margin-top: 24px; }
+      .moon-one button { padding: 0; border: none; background: none; cursor: pointer; border-radius: 14px; overflow: hidden; display: block; width: 100%; }
+      .moon-one button img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+      .moon-cap { margin: 12px 0 0; font-size: 13.5px; color: var(--ink-soft); text-align: center; }
+
+      /* ---------- lightbox ---------- */
+      .lightbox {
+        position: fixed; inset: 0; z-index: 120; background: rgba(5, 9, 17, 0.94);
+        display: none; flex-direction: column; align-items: center; justify-content: center; padding: 18px;
+      }
+      .lightbox.open { display: flex; }
+      .lightbox img { max-width: 100%; max-height: 78svh; object-fit: contain; border-radius: 10px; }
+      .lightbox video { width: 100%; max-width: 880px; max-height: 78svh; border-radius: 10px; background: #000; }
+      .lightbox video.portrait { width: min(92vw, 400px); max-height: 82svh; }
+      .lb-cap { color: #d8dfec; font-size: 13.5px; margin: 14px 0 0; text-align: center; }
+      .lb-count { color: #8fa1bd; font-size: 12.5px; margin: 4px 0 0; }
+      .lb-btn {
+        position: absolute; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3);
+        background: rgba(16, 28, 49, 0.65); color: #fff; font-size: 20px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .lb-close { top: 16px; right: 16px; }
+      .lb-prev { left: 12px; top: 50%; transform: translateY(-50%); }
+      .lb-next { right: 12px; top: 50%; transform: translateY(-50%); }
+
+      /* ---------- modal gallery grid ---------- */
+      .m-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; padding: 14px 20px 0; }
+      @media (max-width: 600px) { .m-grid { grid-template-columns: repeat(2, 1fr); } }
+      .m-grid button { padding: 0; border: none; background: none; cursor: pointer; border-radius: 10px; overflow: hidden; }
+      .m-grid button img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+      .m-count { padding: 12px 24px 0; margin: 0; font-size: 13px; color: var(--ink-soft); font-weight: 600; }
+
+      /* ---------- modal ---------- */
+      .modal-back {
+        position: fixed; inset: 0; z-index: 90; background: rgba(8, 14, 26, 0.72);
+        display: none; align-items: flex-end; justify-content: center;
+      }
+      .modal-back.open { display: flex; }
+      .modal {
+        background: var(--bg); color: var(--ink); width: 100%; max-width: 760px; max-height: 92svh;
+        overflow-y: auto; border-radius: 22px 22px 0 0; padding: 0 0 34px;
+        animation: up 0.25s ease;
+      }
+      @media (min-width: 761px) {
+        .modal-back { align-items: center; padding: 24px; }
+        .modal { border-radius: 22px; }
+      }
+      @keyframes up { from { transform: translateY(24px); opacity: 0.4; } to { transform: none; opacity: 1; } }
+      @media (prefers-reduced-motion: reduce) { .modal { animation: none; } html { scroll-behavior: auto; } }
+      .modal .m-close {
+        position: sticky; top: 0; z-index: 3; float: right; margin: 12px 12px 0 0;
+        width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line);
+        background: var(--surface); color: var(--ink); font-size: 19px; cursor: pointer;
+      }
+      .modal .m-main { clear: both; }
+      .modal .m-main img, .modal .m-main video { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; background: #000; }
+      .modal .m-main video { object-fit: contain; }
+      .modal .m-main video.portrait { aspect-ratio: 9 / 16; width: min(100%, 42svh); margin: 0 auto; display: block; }
+      .m-vcap { margin: 0; padding: 12px 24px 0; font-size: 13.5px; font-weight: 700; color: var(--ink-soft); }
+      .m-thumbs { display: flex; gap: 8px; padding: 12px 20px 0; flex-wrap: wrap; }
+      .m-thumbs button {
+        border: 2px solid transparent; padding: 0; border-radius: 10px; overflow: hidden; cursor: pointer;
+        background: none; width: 76px; height: 54px; flex: 0 0 auto;
+      }
+      .m-thumbs button.on { border-color: var(--moon); }
+      .m-thumbs button img { width: 100%; height: 100%; object-fit: cover; }
+      .m-thumbs .vthumb {
+        display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;
+        background: var(--navy); color: #f3ecd9; font-size: 12px; font-weight: 700;
+        text-align: center; line-height: 1.3; padding: 0 4px;
+      }
+      .modal .m-body { padding: 20px 24px 0; }
+      .modal h3 { font-family: "Noto Serif KR", serif; font-size: 25px; margin: 0 0 6px; }
+      .modal .m-tag { color: var(--ink-soft); margin: 0 0 20px; }
+      .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 14.5px; }
+      .spec-table th, .spec-table td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+      .spec-table th { width: 96px; color: var(--ink-soft); font-weight: 600; white-space: nowrap; }
+      .m-feats { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 24px; padding: 0; list-style: none; }
+      .m-feats li { font-size: 13px; font-weight: 600; color: var(--ink-soft); background: var(--bg-soft); border: 1px solid var(--line); padding: 6px 11px; border-radius: 999px; }
+      .modal .btn { width: 100%; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap header-in">
+        <a class="brand" href="#top" aria-label="HOTEL 달빛강릉 처음으로">
+          <span class="moon-mark" aria-hidden="true">☾</span>
+          <strong>달빛강릉</strong>
+          <span>HOTEL · STAY IN GANGNEUNG</span>
+        </a>
+        <nav class="main" aria-label="주요 메뉴">
+          <a href="#rooms">객실</a>
+          <a href="#spaces">공간</a>
+          <a href="#facilities">시설</a>
+          <a href="#location">오시는 길</a>
+          <a href="#contact">문의</a>
+        </nav>
+        <a class="btn btn-moon header-cta" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">예약하기</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <div class="hero" id="top">
+      <img class="bg" src="assets/img-001.jpg" alt="밤의 HOTEL 달빛강릉 건물 전경 — 붉은 벽돌 건물에 달빛강릉 간판이 켜져 있다" fetchpriority="high" />
+      <div class="wrap hero-in">
+        <p class="en">STAY IN GANGNEUNG</p>
+        <h1>강릉을 담다<br />강릉을 닮다</h1>
+        <p class="brand-line">감성숙소 달빛강릉</p>
+        <p class="sub">강릉을 닮은 감성숙소</p>
+        <div class="hero-ctas">
+          <a class="btn btn-moon" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">바로 예약하러 가기</a>
+          <a class="btn btn-ghost" href="#rooms">객실 둘러보기</a>
+        </div>
+        <div class="hero-facts">
+          <span>강릉역 도보 10분</span>
+          <span>옥상 초승달 포토존</span>
+          <span>주차장 배정</span>
+          <span class="hl">전 객실 금연</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="wrap about-grid">
+        <figure>
+          <img src="assets/img-002.jpg" alt="노을 지는 옥상 루프탑 — 노랗게 불이 켜진 초승달 조명과 강릉 시내, 흰 라운지 의자" loading="lazy" />
+        </figure>
+        <div class="about-copy">
+          <h2>강릉을 닮은 감성숙소</h2>
+          <p>강릉의 안목해변, 경포해변, 커피거리, 월화거리 그리고 중앙시장까지<br />강릉은 그 자체로 감성 도시입니다.</p>
+          <p>올리모델링 감성숙소 달빛강릉은 그런 강릉을 담았습니다.<br />그래서 강릉을 닮았습니다.</p>
+          <p>강릉을 담고, 강릉을 닮은 감성숙소 달빛강릉</p>
+          <div class="stats">
+            <div class="stat"><strong>24개</strong><span>객실 · 6가지 타입</span></div>
+            <div class="stat"><strong>도보 10분</strong><span>KTX 강릉역</span></div>
+            <div class="stat"><strong>2025</strong><span>올리모델링</span></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ROOMS -->
+    <section id="rooms">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="en">Rooms</p>
+          <h2>강릉을 담은 여섯 개의 방</h2>
+          <p>타입마다 다른 무드로 꾸몄습니다. 욕조가 있는 방은 이름 뒤에 B가 붙어요.</p>
+        </div>
+        <div class="room-grid" id="roomGrid"></div>
+        <p class="rooms-note">객실 요금은 홈페이지에 표시하지 않습니다. 예약 페이지에서 날짜별 요금을 확인해 주세요.</p>
+      </div>
+    </section>
+
+    <!-- SPACES -->
+    <section id="spaces">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="en">Gallery</p>
+          <h2>달빛강릉 갤러리</h2>
+          <p>달빛강릉의 풍경을 한곳에 모았습니다. 옥상에 뜨는 달부터 로비, 객실의 작은 디테일과 건물 곳곳의 모습까지 — 사진과 영상을 누르면 크게 볼 수 있어요.</p>
+        </div>
+        <div class="gal-grid" data-gal="spaces" style="margin-top:0"></div>
+      </div>
+    </section>
+
+    <!-- FACILITIES -->
+    <section id="facilities">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="en">Facilities</p>
+          <h2>머무는 동안, 불편 없이</h2>
+        </div>
+        <div class="fac-grid">
+          <div class="fac"><strong>무인 체크인</strong><p>키오스크에서 비대면으로 체크인·체크아웃. 객실 키도 바로 발급됩니다.</p></div>
+          <div class="fac"><strong class="key">짐 보관 락커 이용</strong><p>1층 인포데스크 안쪽에 있어 캐리어도 들어갑니다. 체크인·체크아웃 당일 모두 이용할 수 있습니다.</p></div>
+          <div class="fac"><strong>주차장</strong><p>달빛강릉은 편리한 이용을 위하여 주변 주차장을 자체 주차장으로 사용하고 있으며, 입실전 주차장을 배정해 드립니다</p></div>
+          <div class="fac"><strong>원두커피머신</strong><p>1층 로비에서 커피 한 잔의 여유를.</p></div>
+          <div class="fac"><strong class="key">전 객실 금연</strong><p>모든 객실과 실내 공간은 금연입니다. 흡연 시 별도 청소비가 발생할 수 있습니다.</p></div>
+          <div class="fac"><strong>어메니티</strong><p>칫솔·치약·비누·샴푸·컨디셔너·바디워시·타올을 준비합니다.</p></div>
+          <div class="fac"><strong>객실 비품</strong><p>벽걸이 TV, 냉장고, 전자레인지, 드라이기, 고데기, 화장대.</p></div>
+          <div class="fac"><strong>정수기</strong><p>1층에 정수기가 있어 언제든 편하게 이용할 수 있습니다.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section id="location">
+      <div class="wrap loc-grid">
+        <div>
+          <div class="sec-head" style="margin-bottom:22px">
+            <p class="en">Location</p>
+            <h2>오시는 길</h2>
+          </div>
+          <p class="addr">강원특별자치도 강릉시 옥천로61번길 21</p>
+          <p class="desc">강릉역에서 걸어 10분. 시장과 야시장, 영화관까지 모두 걸어서 닿는 거리입니다. 강릉역 오거리에서 7시 방향, 옥천오거리 쪽으로 쭉 오시면 중간쯤에 있습니다.</p>
+          <a class="btn btn-navy" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">네이버 지도에서 보기</a>
+        </div>
+        <ul class="near">
+          <li><span>KTX 강릉역</span><b>도보 10분</b></li>
+          <li><span>강릉 CGV (홈플러스)</span><b>도보 3분</b></li>
+          <li><span>월화거리 야시장</span><b>도보 5분</b></li>
+          <li><span>강릉 중앙시장</span><b>도보 7분</b></li>
+          <li><span>교동반점 (짬뽕 맛집)</span><b>도보 10분</b></li>
+          <li><span>형제칼국수 (맛집)</span><b>도보 10분</b></li>
+          <li><span>안목해변</span><b>차량 11분</b></li>
+          <li><span>송정해변</span><b>차량 12분</b></li>
+          <li><span>경포대해변</span><b>차량 14분</b></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking">
+      <div class="wrap">
+        <div class="sec-head">
+          <p class="en">Booking</p>
+          <h2>예약 안내</h2>
+          <p>예약은 네이버 예약으로, 체크인은 무인 키오스크로 간편하게.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <p class="no">STEP 1</p>
+            <h3>예약</h3>
+            <div class="ch-list">
+              <a class="ch-btn" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">네이버</a>
+              <span class="ch-btn">에어비앤비</span>
+              <span class="ch-btn">여기어때</span>
+              <span class="ch-btn">야놀자</span>
+            </div>
+          </div>
+          <div class="step">
+            <p class="no">STEP 2</p>
+            <h3>무인 체크인</h3>
+            <p>도착하면 1층 키오스크에서 예약 체크인을 하고 객실 키를 받으세요.</p>
+          </div>
+          <div class="step">
+            <p class="no">STEP 3</p>
+            <h3>짐은 락커에</h3>
+            <p>일찍 도착했거나 늦게 떠나도, 짐 보관 락커를 이용할 수 있습니다.</p>
+          </div>
+        </div>
+        <p class="booking-notes">
+          · 전 객실 금연입니다. 흡연 시 별도 청소비가 발생할 수 있습니다.
+        </p>
+        <a class="btn btn-moon" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">바로 예약하러 가기</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="contact-card">
+          <h2>카카오톡으로 문의하기</h2>
+          <p class="desc">궁금한 점은 카카오톡으로 편하게 물어보세요.</p>
+          <div class="qr-box">
+            <img src="assets/img-003.png" alt="달빛강릉 카카오톡 채널 QR 코드" />
+          </div>
+          <p class="qr-cap">QR을 스캔하면 카카오톡 채널로 연결됩니다</p>
+          <p class="insta">인스타그램에서도 만나요 · <b>@dalbit_gn</b></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap foot-in">
+        <div>
+          <p class="fbrand">HOTEL 달빛강릉</p>
+          <p>강원특별자치도 강릉시 옥천로61번길 21 · STAY IN GANGNEUNG</p>
+        </div>
+        <p>예약·문의는 네이버 예약과 카카오톡 채널을 이용해 주세요.</p>
+        <p class="copy">© 2026 HOTEL 달빛강릉. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- MOBILE BAR -->
+    <div class="mobile-bar">
+      <a class="btn btn-kakao" href="#contact">카톡 문의</a>
+      <a class="btn btn-moon" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">바로 예약하러 가기</a>
+    </div>
+
+    <!-- ROOM MODAL -->
+    <div class="modal-back" id="modalBack" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+      <div class="modal">
+        <button class="m-close" id="mClose" aria-label="닫기">✕</button>
+        <div class="m-main" id="mMain"></div>
+        <div class="m-thumbs" id="mThumbs"></div>
+        <p class="m-count" id="mCount"></p>
+        <div class="m-grid" id="mGrid"></div>
+        <div class="m-body">
+          <h3 id="mTitle"></h3>
+          <p class="m-tag" id="mTag"></p>
+          <table class="spec-table" id="mSpecs"></table>
+          <ul class="m-feats" id="mFeats"></ul>
+          <a class="btn btn-moon" href="https://map.naver.com/p/entry/place/1716448650" target="_blank" rel="noopener">이 객실 예약하러 가기</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="사진 크게 보기">
+      <button class="lb-btn lb-close" id="lbClose" aria-label="닫기">✕</button>
+      <button class="lb-btn lb-prev" id="lbPrev" aria-label="이전 사진">‹</button>
+      <img id="lbImg" alt="" />
+      <video id="lbVid" controls playsinline preload="metadata" style="display:none"></video>
+      <button class="lb-btn lb-next" id="lbNext" aria-label="다음 사진">›</button>
+      <p class="lb-cap" id="lbCap"></p>
+      <p class="lb-count" id="lbCount"></p>
+    </div>
+
+    <script>
+      var ROOMS = [
+        {
+          id: "seolleom", name: "설렘 디럭스", bath: "샤워룸", count: "4개 객실",
+          tag: "들어오는 순간, 별이 켜지는 방",
+          photos: [
+            { src: "assets/img-004.jpg", alt: "설렘 디럭스 객실 — 우드 헤드보드 침대와 별 조명" },
+            { src: "assets/img-005.jpg", alt: "설렘 디럭스 객실 — 라탄 협탁과 뱅커 램프" },
+            { src: "assets/img-006.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-007.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-008.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-009.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-010.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-011.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-012.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-013.jpg", alt: "설렘 디럭스 객실 사진" },
+            { src: "assets/img-014.jpg", alt: "샤워룸 욕실 — 그레이 타일과 유리 파티션 레인샤워" },
+            { src: "assets/img-015.jpg", alt: "샤워룸 욕실 — 그레이 타일 샤워부스" },
+            { src: "assets/img-016.jpg", alt: "샤워룸 욕실 — 세면대와 레인샤워" },
+            { src: "assets/img-017.jpg", alt: "샤워룸 욕실 전경" }
+          ],
+          video: "assets/video-001.mp4",
+          specs: [["침대", "퀸 침대 1개"], ["인원", "기준 2인 · 최대 3인"], ["인원 추가", "1인 15,000원"], ["욕실", "샤워룸 (레인샤워)"]],
+          feats: ["별 조명", "버섯 램프", "뱅커 램프", "바다 액자", "2인 테이블", "벽걸이 TV", "레트로 냉장고", "전자레인지", "화장대", "행거"]
+        },
+        {
+          id: "seolleomb", name: "설렘 디럭스 B", bath: "욕조", count: "8개 객실",
+          tag: "컬러가 반짝이는 방, 욕조에서 쉬어가는 밤",
+          photos: [
+            { src: "assets/img-018.jpg", alt: "설렘 디럭스 B 객실 — 컬러 의자와 원형 테이블" },
+            { src: "assets/img-019.jpg", alt: "설렘 디럭스 B 객실 — 컬러 쿠션과 레트로 냉장고" },
+            { src: "assets/img-020.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-021.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-022.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-023.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-024.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-025.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-026.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-027.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-028.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-029.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-030.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-031.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-032.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-033.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-034.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-035.jpg", alt: "설렘 디럭스 B 객실 사진" },
+            { src: "assets/img-036.jpg", alt: "욕조 욕실 — 베이지 타일과 빌트인 욕조" },
+            { src: "assets/img-037.jpg", alt: "욕조 욕실 — 세면대와 욕조" },
+            { src: "assets/img-038.jpg", alt: "욕조 욕실 — 어메니티 선반 디테일" },
+            { src: "assets/img-039.jpg", alt: "욕조 욕실 — 원형 거울과 세면대" },
+            { src: "assets/img-040.jpg", alt: "욕조 욕실 전경" },
+            { src: "assets/img-041.jpg", alt: "욕조 욕실 전경" },
+            { src: "assets/img-042.jpg", alt: "욕조 욕실 전경" }
+          ],
+          video: null,
+          specs: [["침대", "퀸 침대 1개"], ["인원", "기준 2인 · 최대 3인"], ["인원 추가", "1인 15,000원"], ["욕실", "빌트인 욕조"]],
+          feats: ["빌트인 욕조", "컬러 쿠션", "호실마다 다른 레트로 냉장고", "별 조명 (일부 호실)", "2인 테이블", "벽걸이 TV", "전자레인지", "화장대", "행거"]
+        },
+        {
+          id: "sweet", name: "스윗 모먼트", bath: "샤워룸", count: "2개 객실",
+          tag: "둥글고 부드럽게, 달콤한 빛의 방",
+          photos: [
+            { src: "assets/img-043.jpg", alt: "스윗 모먼트 객실 — 낮은 크림 침대와 라임그린 의자" },
+            { src: "assets/img-044.jpg", alt: "스윗 모먼트 객실 — 선셋 램프의 따뜻한 빛" },
+            { src: "assets/img-045.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-046.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-047.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-048.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-049.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-050.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-051.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-052.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-053.jpg", alt: "스윗 모먼트 객실 — 선셋 램프 디테일" },
+            { src: "assets/img-054.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-055.jpg", alt: "스윗 모먼트 객실 사진" },
+            { src: "assets/img-056.jpg", alt: "스윗 모먼트 객실 — 밤의 선셋 조명" },
+            { src: "assets/img-014.jpg", alt: "샤워룸 욕실 — 그레이 타일과 유리 파티션 레인샤워" },
+            { src: "assets/img-015.jpg", alt: "샤워룸 욕실 — 그레이 타일 샤워부스" },
+            { src: "assets/img-016.jpg", alt: "샤워룸 욕실 — 세면대와 레인샤워" },
+            { src: "assets/img-017.jpg", alt: "샤워룸 욕실 전경" }
+          ],
+          video: "assets/video-002.mp4",
+          specs: [["침대", "퀸 침대 1개"], ["인원", "기준 2인 · 최대 3인"], ["인원 추가", "1인 15,000원"], ["욕실", "샤워룸 (레인샤워)"]],
+          feats: ["라임그린 의자", "선셋 램프", "낮은 크림 로우베드", "버섯 램프", "2인 테이블", "벽걸이 TV", "레트로 냉장고", "전자레인지", "화장대"]
+        },
+        {
+          id: "sweetb", name: "스윗 모먼트 B", bath: "욕조", count: "6개 객실",
+          tag: "보랏빛 노을 아래, 욕조에 몸을 담그는 밤",
+          photos: [
+            { src: "assets/img-057.jpg", alt: "스윗 모먼트 B 객실 — 보라빛 선셋 조명" },
+            { src: "assets/img-058.jpg", alt: "스윗 모먼트 B 객실 — 고래 액자와 크림 침대" },
+            { src: "assets/img-059.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-060.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-061.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-062.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-063.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-064.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-065.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-066.jpg", alt: "스윗 모먼트 B 객실 — 보랏빛 선셋 조명" },
+            { src: "assets/img-067.jpg", alt: "스윗 모먼트 B 객실 사진" },
+            { src: "assets/img-036.jpg", alt: "욕조 욕실 — 베이지 타일과 빌트인 욕조" },
+            { src: "assets/img-037.jpg", alt: "욕조 욕실 — 세면대와 욕조" },
+            { src: "assets/img-038.jpg", alt: "욕조 욕실 — 어메니티 선반 디테일" },
+            { src: "assets/img-039.jpg", alt: "욕조 욕실 — 원형 거울과 세면대" },
+            { src: "assets/img-040.jpg", alt: "욕조 욕실 전경" },
+            { src: "assets/img-041.jpg", alt: "욕조 욕실 전경" },
+            { src: "assets/img-042.jpg", alt: "욕조 욕실 전경" }
+          ],
+          videos: [
+            { src: "assets/video-003.mp4", label: "룸투어 영상" },
+            { src: "assets/video-004.mp4", label: "304호 룸투어 영상", poster: "assets/img-068.jpg", portrait: true }
+          ],
+          specs: [["침대", "퀸 침대 1개"], ["인원", "기준 2인 · 최대 3인"], ["인원 추가", "1인 15,000원"], ["욕실", "빌트인 욕조"]],
+          feats: ["빌트인 욕조", "선셋 조명", "버섯 램프", "호실별 테마 액자", "2인 테이블", "벽걸이 TV", "레트로 냉장고", "전자레인지", "화장대"]
+        },
+        {
+          id: "family", name: "해피 패밀리", bath: "샤워룸 / 욕조룸", count: "3개 객실",
+          tag: "온 가족이 한 방에서, 웃음이 두 배",
+          photos: [
+            { src: "assets/img-069.jpg", alt: "해피 패밀리 객실 — 퀸 베드 2개와 컬러 쿠션, 검은 가죽 소파와 프렌치불독 스툴, 흰 암체어가 보이는 전경" },
+            { src: "assets/img-070.jpg", alt: "해피 패밀리 객실 — 퀸 베드 2개가 나란히 있는 넓은 방" },
+            { src: "assets/img-071.jpg", alt: "해피 패밀리 객실 — 소파와 대형 TV가 있는 거실 공간" },
+            { src: "assets/img-072.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-073.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-074.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-075.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-076.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-077.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-078.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-079.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-080.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-081.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-082.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-083.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-084.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-085.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-086.jpg", alt: "해피 패밀리 객실 사진" },
+            { src: "assets/img-087.jpg", alt: "해피 패밀리 객실 — 퀸 베드 2개와 소파, 창가 쪽 전경" },
+            { src: "assets/img-088.jpg", alt: "해피 패밀리 객실 — 침대에서 본 벽걸이 TV와 행거, 소파 공간" },
+            { src: "assets/img-089.jpg", alt: "해피 패밀리 객실 — 행거 쪽에서 본 침대와 소파 전경" },
+            { src: "assets/img-090.jpg", alt: "해피 패밀리 객실 — 방 전체가 한눈에 보이는 전경" },
+            { src: "assets/img-091.jpg", alt: "해피 패밀리 객실 — 퀸 베드와 스탠드 조명, 우드 책상" },
+            { src: "assets/img-092.jpg", alt: "해피 패밀리 객실 — 프렌치불독 스툴과 검은 소파 클로즈업" },
+            { src: "assets/img-014.jpg", alt: "샤워룸 욕실 — 그레이 타일과 유리 파티션 레인샤워" },
+            { src: "assets/img-015.jpg", alt: "샤워룸 욕실 — 그레이 타일 샤워부스" },
+            { src: "assets/img-016.jpg", alt: "샤워룸 욕실 — 세면대와 레인샤워" },
+            { src: "assets/img-017.jpg", alt: "샤워룸 욕실 전경" },
+            { src: "assets/img-036.jpg", alt: "욕조룸 욕실 — 베이지 타일과 빌트인 욕조" },
+            { src: "assets/img-037.jpg", alt: "욕조룸 욕실 — 세면대와 욕조" },
+            { src: "assets/img-039.jpg", alt: "욕조룸 욕실 — 원형 거울과 세면대" },
+            { src: "assets/img-040.jpg", alt: "욕조룸 욕실 전경" }
+          ],
+          video: "assets/video-005.mp4",
+          specs: [["침대", "퀸 침대 2개"], ["인원", "기준 4인 · 최대 6인"], ["인원 추가", "1인 15,000원 (센스맘 제공)"], ["욕실", "샤워룸 / 욕조룸 (객실별 상이)"]],
+          feats: ["퀸 베드 2개", "샤워룸·욕조룸 (객실별 상이)", "블랙 소파", "강아지 스툴", "대형 TV", "넓은 거실 공간", "화장대", "전자레인지", "행거"]
+        },
+        {
+          id: "oktap", name: "달빛옥탑", bath: "샤워룸", count: "단 1개 객실",
+          tag: "달빛강릉에 단 하나뿐인 방",
+          photos: [
+            { src: "assets/img-093.jpg", alt: "달빛옥탑 객실 — 숲 태피스트리와 틸 의자" },
+            { src: "assets/img-094.jpg", alt: "달빛옥탑 객실 — 파스텔 커튼과 크림 침대" },
+            { src: "assets/img-095.jpg", alt: "달빛옥탑 객실 사진" },
+            { src: "assets/img-096.jpg", alt: "달빛옥탑 객실 — 욕실이 함께 보이는 전경" }
+          ],
+          video: null,
+          specs: [["침대", "퀸 침대 1개"], ["인원", "기준 2인 · 최대 3인"], ["인원 추가", "1인 15,000원"], ["욕실", "샤워부스"]],
+          feats: ["단 하나뿐인 객실", "숲 태피스트리", "틸 의자", "마크라메 벽장식", "라탄 램프", "벽걸이 TV", "전자레인지"]
+        }
+      ];
+
+      function roomVideos(r) {
+        if (r.videos) return r.videos;
+        return r.video ? [{ src: r.video, label: "룸투어 영상" }] : [];
+      }
+
+      var grid = document.getElementById("roomGrid");
+      ROOMS.forEach(function (r, i) {
+        var card = document.createElement("article");
+        card.className = "room-card";
+        var strip =
+          '<div class="strip">' +
+          r.photos.slice(1, 4).map(function (p, j) {
+            return '<button type="button" data-room="' + i + '" data-photo="' + (j + 1) + '" aria-label="' + r.name + " 사진 " + (j + 2) + ' 크게 보기"><img src="' + p.src + '" alt="" loading="lazy" /></button>';
+          }).join("") +
+          '<button type="button" data-room="' + i + '" aria-label="' + r.name + ' 전체 사진 보기"><span class="strip-more">사진 ' + r.photos.length + "장" + (roomVideos(r).length ? "<br />+ 영상" : "") + "</span></button></div>";
+        card.innerHTML =
+          '<div class="ph"><img src="' + r.photos[0].src + '" alt="' + r.photos[0].alt + '" loading="lazy" />' +
+          '<span class="count">' + r.count + "</span></div>" +
+          '<div class="body"><h3>' + r.name + ' <span class="bath">· ' + r.bath + "</span></h3>" +
+          '<p class="tag">' + r.tag + "</p>" +
+          '<div class="chips">' + r.specs.slice(0, 3).map(function (s) { return "<span>" + s[0] + " " + s[1].split(" (")[0] + "</span>"; }).join("") + "</div>" +
+          strip +
+          '<button class="more" type="button" data-room="' + i + '">사진 ' + r.photos.length + (roomVideos(r).length ? "장·영상 자세히 보기 →" : "장 자세히 보기 →") + "</button></div>";
+        grid.appendChild(card);
+      });
+
+      var back = document.getElementById("modalBack");
+      var mMain = document.getElementById("mMain");
+      var mThumbs = document.getElementById("mThumbs");
+      var lastFocus = null;
+
+      function setMain(room, idx) {
+        mMain.innerHTML = "";
+        var item = room.media[idx];
+        if (item.type === "video") {
+          var v = document.createElement("video");
+          v.src = item.src; v.controls = true; v.playsInline = true; v.preload = "metadata";
+          if (item.poster) v.poster = item.poster;
+          if (item.portrait) v.className = "portrait";
+          v.setAttribute("aria-label", room.name + " " + (item.label || "룸투어 영상"));
+          mMain.appendChild(v);
+          if (item.label) {
+            var cap = document.createElement("p");
+            cap.className = "m-vcap";
+            cap.textContent = item.label;
+            mMain.appendChild(cap);
+          }
+        } else {
+          var img = document.createElement("img");
+          img.src = item.src; img.alt = item.alt;
+          mMain.appendChild(img);
+        }
+        var btns = mThumbs.querySelectorAll("button");
+        btns.forEach(function (b, j) { b.classList.toggle("on", j === idx); });
+      }
+
+      function openRoom(i, startIdx) {
+        var r = ROOMS[i];
+        r.media = r.photos.map(function (p) { return { type: "img", src: p.src, alt: p.alt }; });
+        roomVideos(r).forEach(function (vd) {
+          r.media.push({ type: "video", src: vd.src, label: vd.label, poster: vd.poster, portrait: vd.portrait });
+        });
+        document.getElementById("mTitle").textContent = r.name + " · " + r.bath;
+        document.getElementById("mTag").textContent = r.tag + " — " + r.count;
+        document.getElementById("mSpecs").innerHTML = r.specs.map(function (s) {
+          return "<tr><th>" + s[0] + "</th><td>" + s[1] + "</td></tr>";
+        }).join("");
+        document.getElementById("mFeats").innerHTML = r.feats.map(function (f) { return "<li>" + f + "</li>"; }).join("");
+        document.getElementById("mCount").textContent = "사진 " + r.photos.length + "장" + (roomVideos(r).length ? " · 룸투어 영상 " + roomVideos(r).length + "개" : "") + " — 사진을 누르면 크게 볼 수 있어요";
+        mThumbs.innerHTML = "";
+        r.media.forEach(function (m, j) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", m.type === "video" ? (m.label || "룸투어 영상") + " 보기" : "사진 " + (j + 1) + " 보기");
+          b.innerHTML = m.type === "video" ? '<span class="vthumb">▶ ' + (m.label || "영상").replace(" 영상", "") + "</span>" : '<img src="' + m.src + '" alt="" loading="lazy" />';
+          b.addEventListener("click", function () { setMain(r, j); });
+          mThumbs.appendChild(b);
+        });
+        var mGrid = document.getElementById("mGrid");
+        mGrid.innerHTML = "";
+        r.photos.forEach(function (p, j) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", r.name + " 사진 " + (j + 1) + " 크게 보기");
+          b.innerHTML = '<img src="' + p.src + '" alt="" loading="lazy" />';
+          b.addEventListener("click", function () {
+            openLightbox(r.photos.map(function (x) { return { src: x.src, alt: x.alt }; }), j);
+          });
+          mGrid.appendChild(b);
+        });
+        setMain(r, startIdx || 0);
+        lastFocus = document.activeElement;
+        back.classList.add("open");
+        back.querySelector(".modal").scrollTop = 0;
+        document.body.style.overflow = "hidden";
+        document.getElementById("mClose").focus();
+      }
+
+      function closeRoom() {
+        back.classList.remove("open");
+        mMain.innerHTML = "";
+        document.body.style.overflow = "";
+        if (lastFocus) lastFocus.focus();
+      }
+
+      grid.addEventListener("click", function (e) {
+        var b = e.target.closest("[data-room]");
+        if (!b) return;
+        var ri = parseInt(b.getAttribute("data-room"), 10);
+        var ph = b.getAttribute("data-photo");
+        if (ph !== null) {
+          var r = ROOMS[ri];
+          openLightbox(r.photos.map(function (x) { return { src: x.src, alt: x.alt }; }), parseInt(ph, 10));
+        } else {
+          openRoom(ri);
+        }
+      });
+      document.getElementById("mClose").addEventListener("click", closeRoom);
+      back.addEventListener("click", function (e) { if (e.target === back) closeRoom(); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && back.classList.contains("open")) closeRoom(); });
+
+      /* ---------- space galleries + lightbox ---------- */
+      var GALLERIES = {
+        spaces: [
+          { src: "assets/img-097.jpg", alt: "옥상 루프탑 — 오렌지빛으로 불이 켜진 대형 초승달 조명과 강릉 시내 야경" },
+          { video: "assets/video-006.mp4", poster: "assets/img-098.jpg", label: "소개 영상", portrait: true, alt: "영상 — 외관부터 로비, 복도와 객실까지, 달빛강릉 소개 영상 (27초)" },
+          { video: "assets/video-007.mp4", poster: "assets/img-099.jpg", label: "달 색변화 영상", alt: "영상 — 옥상 초승달 조명이 색을 바꾸는 모습 (22초)" },
+          { src: "assets/img-098.jpg", alt: "낮의 HOTEL 달빛강릉 건물 외관 — 붉은 벽돌 건물과 STAY IN GANGNEUNG 입구, 주차장 캐노피" },
+          { src: "assets/img-100.jpg", alt: "그린 대리석과 우드 바 카운터가 있는 로비" },
+          { src: "assets/img-101.jpg", alt: "로비 바 정면 — 그린 대리석과 우드 카운터, 그린 다이얼 전화기와 커피머신" },
+          { src: "assets/img-102.jpg", alt: "로비 바 카운터 전경 — 그린 대리석과 우드 바" },
+          { src: "assets/img-103.jpg", alt: "설렘 디럭스 B 객실 — 원형 거울 너머 침대와 파란 스탠드 조명" },
+          { src: "assets/img-104.jpg", alt: "객실 디테일 — 우드 헤드보드 침대와 라탄 협탁 위 뱅커 램프" },
+          { src: "assets/img-105.jpg", alt: "옥상 초승달 조명 — 노랗게 빛나는 달" },
+          { src: "assets/img-106.jpg", alt: "로비 바와 복도가 이어지는 전경" },
+          { src: "assets/img-107.jpg", alt: "낮의 로비 — 입구와 바 카운터, 커피머신과 정수기" },
+          { src: "assets/img-108.jpg", alt: "로비 바 스툴이 놓인 카운터" },
+          { src: "assets/img-109.jpg", alt: "설렘 디럭스 B 객실 — 침대 머리맡 LOVE 액자와 블랙 플로어 램프" },
+          { src: "assets/img-110.jpg", alt: "옥상 초승달 조명 — 노을빛 하늘 아래 하얗게 빛나는 달" },
+          { src: "assets/img-111.jpg", alt: "욕실 어메니티 — 바디워시·컨디셔너·샴푸 디스펜서 3종" },
+          { src: "assets/img-112.jpg", alt: "로비의 옐로 체어와 그린 대리석 벽" },
+          { src: "assets/img-113.jpg", alt: "로비 벽에 비친 보랏빛 선셋 프로젝션" },
+          { src: "assets/img-114.jpg", alt: "로비 전경 — 무인 체크인 키오스크와 바, 복도가 한눈에" },
+          { src: "assets/img-115.jpg", alt: "무인 체크인 키오스크 — 숙박·예약 체크인·체크아웃 화면과 객실키 발급구" },
+          { src: "assets/img-116.jpg", alt: "객실 어메니티 — 라탄 바구니에 담긴 면봉과 머리끈, 화장솜" },
+          { src: "assets/img-117.jpg", alt: "옥상 초승달 조명 — 민트빛으로 빛나는 달" },
+          { src: "assets/img-118.jpg", alt: "객실 디테일 — 침대 옆 노란 버섯 램프와 아치 거울" },
+          { src: "assets/img-119.jpg", alt: "로비 선반의 우드 스피커와 호두까기 인형" },
+          { src: "assets/img-120.jpg", alt: "로비의 블랙 가죽 체어와 화분" },
+          { src: "assets/img-121.jpg", alt: "어메니티 — 칫솔·치약 덴탈 키트" },
+          { src: "assets/img-122.jpg", alt: "설렘 디럭스 B 객실 — 원형 거울에 비친 침대와 우드 협탁 램프" },
+          { src: "assets/img-123.jpg", alt: "옥상 초승달 조명 — 청록빛으로 빛나는 달" },
+          { src: "assets/img-124.jpg", alt: "로비 그린 벽과 창가 액자" },
+          { src: "assets/img-125.jpg", alt: "입구 — STAY IN GANGNEUNG 차양과 달빛강릉 간판, 주차장 캐노피" },
+          { src: "assets/img-126.jpg", alt: "로비의 그레이 체어와 레드 쿠션" },
+          { src: "assets/img-127.jpg", alt: "욕실 어메니티 — 샴푸와 바디워시 디스펜서" },
+          { src: "assets/img-128.jpg", alt: "어메니티 — 라탄 바구니에 담긴 샤워타올과 덴탈 키트, 비누" },
+          { src: "assets/img-129.jpg", alt: "옥상 초승달 조명 — 파랗게 빛나는 달" },
+          { src: "assets/img-130.jpg", alt: "프론트 짐 보관 락커" },
+          { src: "assets/img-131.jpg", alt: "붉은 벽돌 건물 입구의 HOTEL 달빛강릉 간판" },
+          { src: "assets/img-132.jpg", alt: "붉은 벽돌 건물 전경 — 입구와 주차장 입구" },
+          { src: "assets/img-133.jpg", alt: "객실 비품 — 냉장고 위 전자레인지와 작은 화분" },
+          { src: "assets/img-134.jpg", alt: "옥상 초승달 조명 — 보랏빛으로 빛나는 달" },
+          { src: "assets/img-135.jpg", alt: "객실 비품 — 민트색 레트로 전자레인지와 유리병 화분" },
+          { src: "assets/img-136.jpg", alt: "밤의 HOTEL 달빛강릉 건물 전경" },
+          { src: "assets/img-137.jpg", alt: "실내 조명 간판 — 빛나는 감성숙소 달빛강릉 초승달 로고" },
+          { src: "assets/img-138.jpg", alt: "입구 유리문에 새겨진 HOTEL 달빛강릉 초승달 로고" },
+          { src: "assets/img-139.jpg", alt: "입구 정면 — 계단과 돌담, 화분이 놓인 현관" },
+          { src: "assets/img-140.jpg", alt: "욕실 선반 — 샤워타올과 비누, 칫솔 세트" },
+          { src: "assets/img-141.jpg", alt: "옥상 루프탑 — 밤하늘 아래 붉게 빛나는 달과 야경" },
+          { src: "assets/img-142.jpg", alt: "객실 비품 — 블랙 헤어드라이어" },
+          { src: "assets/img-143.jpg", alt: "붉은 벽돌 담장의 Parking Lot 안내판" },
+          { src: "assets/img-144.jpg", alt: "달빛강릉 주차장 입구" },
+          { src: "assets/img-145.jpg", alt: "거리에서 본 건물 전경 — Parking Lot 입구와 달빛강릉 세로 간판" },
+          { src: "assets/img-146.jpg", alt: "설렘 디럭스 B 객실 — 침대 옆 테이블 램프와 셔터 창" },
+          { src: "assets/img-147.jpg", alt: "옥상 루프탑 라운지 — 노란 달과 화이트 의자" },
+          { src: "assets/img-148.jpg", alt: "오렌지 톤 벽과 간접조명이 있는 객실 복도" },
+          { src: "assets/img-149.jpg", alt: "오렌지 톤 복도 — 대나무 화분과 간접조명" },
+          { src: "assets/img-150.jpg", alt: "복도 코너의 화분과 그린 벽" },
+          { src: "assets/img-151.jpg", alt: "입구 정면 — STAY IN GANGNEUNG 차양 아래 유리문과 노란 꽃" },
+          { src: "assets/img-152.jpg", alt: "옥상 루프탑 라운지 — 하얀 달과 강릉 시내 뷰" }
+        ]
+      };
+
+      document.querySelectorAll("[data-gal]").forEach(function (el) {
+        var items = GALLERIES[el.getAttribute("data-gal")] || [];
+        var imgItems = items.filter(function (p) { return !p.video; });
+        items.forEach(function (p) {
+          if (p.video) {
+            var vb = document.createElement("button");
+            vb.type = "button";
+            vb.className = "gal-vbtn";
+            vb.setAttribute("aria-label", p.alt + " — 재생하기");
+            vb.innerHTML = '<img src="' + (p.poster || "") + '" alt="" loading="lazy" /><span class="play-badge"><i aria-hidden="true">▶</i></span><span class="vlabel">영상 · ' + (p.label || "영상") + "</span>";
+            vb.addEventListener("click", function () { openVideoLightbox(p); });
+            el.appendChild(vb);
+            return;
+          }
+          var b = document.createElement("button");
+          b.type = "button";
+          b.setAttribute("aria-label", p.alt + " — 크게 보기");
+          b.innerHTML = '<img src="' + p.src + '" alt="' + p.alt + '" loading="lazy" />';
+          var j = imgItems.indexOf(p);
+          b.addEventListener("click", function () { openLightbox(imgItems, j); });
+          el.appendChild(b);
+        });
+      });
+
+      var lb = document.getElementById("lightbox");
+      var lbImg = document.getElementById("lbImg");
+      var lbVid = document.getElementById("lbVid");
+      var lbItems = [], lbIdx = 0, lbLastFocus = null, lbVideoMode = false;
+      function resetLbVideo() {
+        lbVid.pause();
+        lbVid.removeAttribute("src");
+        lbVid.removeAttribute("poster");
+        lbVid.classList.remove("portrait");
+        lbVid.style.display = "none";
+        lbVid.load();
+      }
+      function setLbNav(show) {
+        document.getElementById("lbPrev").style.display = show ? "" : "none";
+        document.getElementById("lbNext").style.display = show ? "" : "none";
+      }
+      function showLb() {
+        var it = lbItems[lbIdx];
+        lbImg.src = it.src; lbImg.alt = it.alt;
+        document.getElementById("lbCap").textContent = it.alt;
+        document.getElementById("lbCount").textContent = (lbIdx + 1) + " / " + lbItems.length;
+      }
+      function openLightbox(items, idx) {
+        lbVideoMode = false;
+        resetLbVideo();
+        lbImg.style.display = "";
+        setLbNav(true);
+        lbItems = items; lbIdx = idx || 0;
+        lbLastFocus = document.activeElement;
+        showLb();
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+        document.getElementById("lbClose").focus();
+      }
+      function openVideoLightbox(item) {
+        lbVideoMode = true;
+        lbItems = [];
+        lbLastFocus = document.activeElement;
+        lbImg.removeAttribute("src");
+        lbImg.style.display = "none";
+        setLbNav(false);
+        lbVid.style.display = "block";
+        if (item.poster) lbVid.poster = item.poster;
+        lbVid.classList.toggle("portrait", !!item.portrait);
+        lbVid.src = item.video;
+        document.getElementById("lbCap").textContent = item.alt;
+        document.getElementById("lbCount").textContent = "영상";
+        lb.classList.add("open");
+        document.body.style.overflow = "hidden";
+        document.getElementById("lbClose").focus();
+        var pr = lbVid.play();
+        if (pr && pr.catch) pr.catch(function () {});
+      }
+      function closeLightbox() {
+        lb.classList.remove("open");
+        lbImg.removeAttribute("src");
+        resetLbVideo();
+        lbImg.style.display = "";
+        setLbNav(true);
+        lbVideoMode = false;
+        if (!back.classList.contains("open")) document.body.style.overflow = "";
+        if (lbLastFocus) lbLastFocus.focus();
+      }
+      function stepLb(d) { if (lbVideoMode || !lbItems.length) return; lbIdx = (lbIdx + d + lbItems.length) % lbItems.length; showLb(); }
+      document.getElementById("lbClose").addEventListener("click", closeLightbox);
+      document.getElementById("lbPrev").addEventListener("click", function () { stepLb(-1); });
+      document.getElementById("lbNext").addEventListener("click", function () { stepLb(1); });
+      lb.addEventListener("click", function (e) { if (e.target === lb) closeLightbox(); });
+      document.addEventListener("keydown", function (e) {
+        if (!lb.classList.contains("open")) return;
+        if (e.key === "Escape") closeLightbox();
+        if (e.key === "ArrowLeft") stepLb(-1);
+        if (e.key === "ArrowRight") stepLb(1);
+      });
+      var touchX = null;
+      lb.addEventListener("touchstart", function (e) { touchX = e.changedTouches[0].clientX; }, { passive: true });
+      lb.addEventListener("touchend", function (e) {
+        if (touchX === null) return;
+        var dx = e.changedTouches[0].clientX - touchX;
+        if (Math.abs(dx) > 48) stepLb(dx < 0 ? 1 : -1);
+        touchX = null;
+      }, { passive: true });
+    </script>
+  </body>
+</html>
