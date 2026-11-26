@@ -305,6 +305,8 @@
       @media (max-width: 760px) { .gal-grid { grid-template-columns: repeat(3, 1fr); } }
       .gal-grid button { padding: 0; border: none; background: none; cursor: pointer; border-radius: 12px; overflow: hidden; }
       .gal-grid button img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+      .gal-grid button.gal-contain { background: var(--surface); border: 1px solid var(--line); }
+      .gal-grid button.gal-contain img { object-fit: contain; }
       .gal-grid .gal-vbtn { position: relative; display: block; }
       .gal-grid .gal-vbtn img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; }
       .gal-vbtn .play-badge { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
@@ -932,11 +934,13 @@
       /* ---------- space galleries + lightbox ---------- */
       var GALLERIES = {
         spaces: [
+        
           { src: "assets/img-097.jpg", alt: "옥상 루프탑 — 오렌지빛으로 불이 켜진 대형 초승달 조명과 강릉 시내 야경" },
           { video: "assets/video-006.mp4", poster: "assets/img-098.jpg", label: "소개 영상", portrait: true, alt: "영상 — 외관부터 로비, 복도와 객실까지, 달빛강릉 소개 영상 (27초)" },
           { video: "assets/video-007.mp4", poster: "assets/img-099.jpg", label: "달 색변화 영상", alt: "영상 — 옥상 초승달 조명이 색을 바꾸는 모습 (22초)" },
           { src: "assets/img-098.jpg", alt: "낮의 HOTEL 달빛강릉 건물 외관 — 붉은 벽돌 건물과 STAY IN GANGNEUNG 입구, 주차장 캐노피" },
           { src: "assets/img-100.jpg", alt: "그린 대리석과 우드 바 카운터가 있는 로비" },
+          { src: "assets/img-153.jpg", alt: "2025 KCIA 한국소비자산업평가 우수 — 숙박업, 강릉시 호텔 부문", fit: "contain" },
           { src: "assets/img-101.jpg", alt: "로비 바 정면 — 그린 대리석과 우드 카운터, 그린 다이얼 전화기와 커피머신" },
           { src: "assets/img-102.jpg", alt: "로비 바 카운터 전경 — 그린 대리석과 우드 바" },
           { src: "assets/img-103.jpg", alt: "설렘 디럭스 B 객실 — 원형 거울 너머 침대와 파란 스탠드 조명" },
@@ -946,6 +950,7 @@
           { src: "assets/img-107.jpg", alt: "낮의 로비 — 입구와 바 카운터, 커피머신과 정수기" },
           { src: "assets/img-108.jpg", alt: "로비 바 스툴이 놓인 카운터" },
           { src: "assets/img-109.jpg", alt: "설렘 디럭스 B 객실 — 침대 머리맡 LOVE 액자와 블랙 플로어 램프" },
+          { src: "assets/img-154.jpg", alt: "2025 KCIA 한국소비자산업평가 우수 — 숙박업, 강릉시 호텔 부문", fit: "contain" },
           { src: "assets/img-110.jpg", alt: "옥상 초승달 조명 — 노을빛 하늘 아래 하얗게 빛나는 달" },
           { src: "assets/img-111.jpg", alt: "욕실 어메니티 — 바디워시·컨디셔너·샴푸 디스펜서 3종" },
           { src: "assets/img-112.jpg", alt: "로비의 옐로 체어와 그린 대리석 벽" },
@@ -955,6 +960,7 @@
           { src: "assets/img-116.jpg", alt: "객실 어메니티 — 라탄 바구니에 담긴 면봉과 머리끈, 화장솜" },
           { src: "assets/img-117.jpg", alt: "옥상 초승달 조명 — 민트빛으로 빛나는 달" },
           { src: "assets/img-118.jpg", alt: "객실 디테일 — 침대 옆 노란 버섯 램프와 아치 거울" },
+          { src: "assets/img-155.jpg", alt: "2025 KCIA 한국소비자산업평가 우수 — 숙박업, 강릉시 호텔 부문", fit: "contain" },
           { src: "assets/img-119.jpg", alt: "로비 선반의 우드 스피커와 호두까기 인형" },
           { src: "assets/img-120.jpg", alt: "로비의 블랙 가죽 체어와 화분" },
           { src: "assets/img-121.jpg", alt: "어메니티 — 칫솔·치약 덴탈 키트" },
@@ -964,6 +970,7 @@
           { src: "assets/img-125.jpg", alt: "입구 — STAY IN GANGNEUNG 차양과 달빛강릉 간판, 주차장 캐노피" },
           { src: "assets/img-126.jpg", alt: "로비의 그레이 체어와 레드 쿠션" },
           { src: "assets/img-127.jpg", alt: "욕실 어메니티 — 샴푸와 바디워시 디스펜서" },
+          { src: "assets/img-156.png", alt: "위생관리등급 최우수(녹색)등급 — 강릉시, 2026년 10월 8일", fit: "contain" },
           { src: "assets/img-128.jpg", alt: "어메니티 — 라탄 바구니에 담긴 샤워타올과 덴탈 키트, 비누" },
           { src: "assets/img-129.jpg", alt: "옥상 초승달 조명 — 파랗게 빛나는 달" },
           { src: "assets/img-130.jpg", alt: "프론트 짐 보관 락커" },
@@ -973,6 +980,7 @@
           { src: "assets/img-134.jpg", alt: "옥상 초승달 조명 — 보랏빛으로 빛나는 달" },
           { src: "assets/img-135.jpg", alt: "객실 비품 — 민트색 레트로 전자레인지와 유리병 화분" },
           { src: "assets/img-136.jpg", alt: "밤의 HOTEL 달빛강릉 건물 전경" },
+          { src: "assets/img-157.png", alt: "HOTEL 달빛강릉 로고", fit: "contain" },
           { src: "assets/img-137.jpg", alt: "실내 조명 간판 — 빛나는 감성숙소 달빛강릉 초승달 로고" },
           { src: "assets/img-138.jpg", alt: "입구 유리문에 새겨진 HOTEL 달빛강릉 초승달 로고" },
           { src: "assets/img-139.jpg", alt: "입구 정면 — 계단과 돌담, 화분이 놓인 현관" },
@@ -982,6 +990,7 @@
           { src: "assets/img-143.jpg", alt: "붉은 벽돌 담장의 Parking Lot 안내판" },
           { src: "assets/img-144.jpg", alt: "달빛강릉 주차장 입구" },
           { src: "assets/img-145.jpg", alt: "거리에서 본 건물 전경 — Parking Lot 입구와 달빛강릉 세로 간판" },
+          { src: "assets/img-158.png", alt: "HOTEL 달빛강릉 로고", fit: "contain" },
           { src: "assets/img-146.jpg", alt: "설렘 디럭스 B 객실 — 침대 옆 테이블 램프와 셔터 창" },
           { src: "assets/img-147.jpg", alt: "옥상 루프탑 라운지 — 노란 달과 화이트 의자" },
           { src: "assets/img-148.jpg", alt: "오렌지 톤 벽과 간접조명이 있는 객실 복도" },
@@ -1008,6 +1017,7 @@
           }
           var b = document.createElement("button");
           b.type = "button";
+          if (p.fit === "contain") b.className = "gal-contain";
           b.setAttribute("aria-label", p.alt + " — 크게 보기");
           b.innerHTML = '<img src="' + p.src + '" alt="' + p.alt + '" loading="lazy" />';
           var j = imgItems.indexOf(p);
